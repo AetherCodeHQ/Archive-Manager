@@ -23,12 +23,12 @@ Every developer needs archive manager — but existing tools are either too comp
 
 ## Features
 
-- **ZIP, TAR, GZIP support** — ZIP, TAR, GZIP support
-- **Batch compression** — Batch compression
-- **Extraction with overwrite options** — Extraction with overwrite options
-- **Archive inspection** — Archive inspection
-- **Cross-platform** — Cross-platform
-- **CLI interface** — CLI interface
+- ZIP, TAR, GZIP support
+- Batch compression
+- Extraction with overwrite options
+- Archive inspection
+- Cross-platform
+- CLI interface
 
 ## Quick Start
 
