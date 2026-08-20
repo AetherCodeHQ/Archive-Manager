@@ -7,7 +7,7 @@
 ![Lint](https://img.shields.io/badge/GolangCI--Lint-Passing-00ADD8?style=for-the-badge)
 ![Dependabot](https://img.shields.io/badge/Dependabot-Enabled-025E9C?style=for-the-badge&logo=dependabot&logoColor=white)
 
-> Archive-Manager - Open source tool by Qyroxen
+> Archive-Manager - Open source tool by AetherCodeHQ
 
 `archive` `cli` `compression` `golang` `open-source` `utilities`
 
@@ -30,7 +30,7 @@
 
 ### Install from source
 ```bash
-git clone https://github.com/Qyroxen/Archive-Manager.git
+git clone https://github.com/AetherCodeHQ/Archive-Manager.git
 cd Archive-Manager
 go build -o Archive-Manager .
 ```
@@ -95,7 +95,7 @@ go build -o Archive-Manager .
 
 ```bash
 # Clone the repo
-git clone https://github.com/Qyroxen/Archive-Manager.git
+git clone https://github.com/AetherCodeHQ/Archive-Manager.git
 cd Archive-Manager
 
 # Build
@@ -123,5 +123,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ---
 
 <p align="center">
-  Built with ❤️ by <a href="https://github.com/Qyroxen">AetherCode</a> • <a href="https://github.com/AetherCode-Core">AetherCode-Core</a>
+  Built with ❤️ by <a href="https://github.com/AetherCodeHQ">AetherCode</a> • <a href="https://github.com/AetherCode-Core">AetherCode-Core</a>
 </p>
