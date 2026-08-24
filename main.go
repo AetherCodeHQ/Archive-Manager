@@ -1,40 +1,38 @@
-
 package main
 
 import (
+	"archive/zip"
 	"fmt"
 	"os"
-	"strings"
 )
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("usage: Archive-Manager <bytes|lines|reverse|upper|lower>")
+		fmt.Println("usage: archive-manager <file.zip> [list|extract]")
 		os.Exit(1)
 	}
-	mode := os.Args[1]
-	in := ""
-	if len(os.Args) > 2 {
-		in = os.Args[2]
+	r, err := zip.OpenReader(os.Args[1])
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
-	lines := strings.Split(in, "\n")
+	defer r.Close()
+	mode := "list"
+	if len(os.Args) > 2 {
+		mode = os.Args[2]
+	}
 	switch mode {
-	case "lines":
-		fmt.Println(len(lines))
-	case "bytes":
-		fmt.Println(len(in))
-	case "upper":
-		fmt.Println(strings.ToUpper(in))
-	case "lower":
-		fmt.Println(strings.ToLower(in))
-	case "reverse":
-		runes := []rune(in)
-		for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-			runes[i], runes[j] = runes[j], runes[i]
+	case "list":
+		for _, f := range r.File {
+			fmt.Printf("%10d  %s\n", f.UncompressedSize64, f.Name)
 		}
-		fmt.Println(string(runes))
+		fmt.Printf("\n%d entries\n", len(r.File))
+	case "extract":
+		for _, f := range r.File {
+			fmt.Println("would extract:", f.Name)
+		}
 	default:
-		fmt.Fprintln(os.Stderr, "unknown mode:", mode)
+		fmt.Println("unknown mode:", mode)
 		os.Exit(1)
 	}
 }
